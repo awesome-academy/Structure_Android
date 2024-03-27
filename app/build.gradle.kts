@@ -3,6 +3,7 @@ plugins {
     kotlin(Plugins.kotlin_android)
     id(Plugins.kotlin_parcelize)
     id(Plugins.detekt).version(Versions.detekt)
+    id("com.google.devtools.ksp").version("1.9.0-1.0.12")
 }
 
 buildscript {
@@ -55,11 +56,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
@@ -125,7 +126,13 @@ dependencies {
     implementation(Deps.glide_runtime)
     implementation(Deps.glide_compiler)
 
+    // Room
+    implementation(Deps.room_runtime)
+    ksp(Deps.room_ksp)
+    implementation(Deps.room_ktx)
+
     //Test
     testImplementation(Deps.junit)
     testImplementation(Deps.mockk)
+
 }

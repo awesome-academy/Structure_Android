@@ -1,12 +1,16 @@
 package com.sun.android.data.model
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
+@Entity(tableName = "movies")
 data class Movie(
+    @PrimaryKey
     @SerializedName("id")
     @Expose
     var id: Int = -1,

@@ -22,6 +22,8 @@ object Versions {
 
     const val koin = "3.4.0"
 
+    const val room = "2.5.2"
+
     const val jUnit = "4.13.2"
     const val mockk = "1.13.2"
 
@@ -88,6 +90,11 @@ object Deps {
 
     // Koin
     const val koin = "io.insert-koin:koin-android:${Versions.koin}"
+
+    // Room
+    const val room_runtime = "androidx.room:room-runtime:${Versions.room}"
+    const val room_ksp = "androidx.room:room-compiler:${Versions.room}"
+    const val room_ktx = "androidx.room:room-ktx:${Versions.room}"
 
     // Testing
     const val junit = "junit:junit:${Versions.jUnit}"

@@ -7,6 +7,8 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.sun.android.data.source.local.api.SharedPrefsApi
 import com.sun.android.data.source.local.api.sharedpref.SharedPrefsImpl
+import com.sun.android.data.source.local.room.AppDatabase
+import com.sun.android.data.source.local.room.MovieDao
 import com.sun.android.data.source.remote.api.middleware.BooleanAdapter
 import com.sun.android.data.source.remote.api.middleware.DoubleAdapter
 import com.sun.android.data.source.remote.api.middleware.IntegerAdapter
@@ -23,6 +25,10 @@ val AppModule = module {
     single { provideBaseDispatcherProvider() }
 
     single { provideGson() }
+
+    single { provideDatabase(get()) }
+
+    single { provideMovieDao(get()) }
 }
 
 fun provideResources(app: Application): Resources {
@@ -49,4 +55,12 @@ fun provideGson(): Gson {
         .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         .excludeFieldsWithoutExposeAnnotation()
         .create()
+}
+
+fun provideDatabase(app: Application): AppDatabase {
+    return AppDatabase.getDatabase(app.applicationContext)
+}
+
+fun provideMovieDao(database: AppDatabase): MovieDao {
+    return database.movieDao()
 }

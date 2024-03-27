@@ -6,19 +6,18 @@ import com.sun.android.data.repository.MovieRepositoryImpl
 import com.sun.android.data.repository.TokenRepositoryImpl
 import com.sun.android.data.source.MovieDataSource
 import com.sun.android.data.source.TokenDataSource
-import com.sun.android.data.source.remote.MovieRemoteImpl
 import org.koin.dsl.module
 
 val RepositoryModule = module {
     single { provideTokenRepository(get()) }
 
-    single { provideMovieRepository(MovieRemoteImpl(get())) }
+    single { provideMovieRepository(get(), get()) }
 }
 
 fun provideTokenRepository(local: TokenDataSource.Local): TokenRepository {
     return TokenRepositoryImpl(local)
 }
 
-fun provideMovieRepository(remote: MovieDataSource.Remote): MovieRepository {
-    return MovieRepositoryImpl(remote)
+fun provideMovieRepository(remote: MovieDataSource.Remote, local: MovieDataSource.Local): MovieRepository {
+    return MovieRepositoryImpl(remote, local)
 }
