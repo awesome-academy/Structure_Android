@@ -25,6 +25,14 @@ class MovieRepositoryImpl(
     }
 
     override fun getDetailMovies(movieId: Int) = flow {
-        emit(remote.getMovieDetail(movieId = movieId))
+        try {
+            val movie = local.getMovieDetailLocal(movieId)
+            emit(movie)
+        } catch (e: IOException) {
+            Log.e("MovieRepository", "getDetailMovies failed, retry with network \n Detail error:\n $e")
+            val movie = remote.getMovieDetail(movieId = movieId)
+            local.updateMovies(arrayListOf(movie))
+            emit(local.getMovieDetailLocal(movieId))
+        }
     }
 }

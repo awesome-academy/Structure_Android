@@ -10,6 +10,7 @@ interface MovieDataSource {
     interface Local {
         suspend fun getMoviesLocal(): List<Movie>
         suspend fun updateMovies(movies: List<Movie>)
+        suspend fun getMovieDetailLocal(movieId: Int): Movie
     }
 
     /**

@@ -12,4 +12,8 @@ class MovieLocalImpl(private val movieDao: MovieDao) : MovieDataSource.Local {
     override suspend fun updateMovies(movies: List<Movie>) {
         return movieDao.insert(movies)
     }
+
+    override suspend fun getMovieDetailLocal(movieId: Int): Movie {
+        return movieDao.getMovie(movieId)
+    }
 }
