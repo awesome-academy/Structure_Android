@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id(Plugins.android_application)
     kotlin(Plugins.kotlin_android)
@@ -20,6 +22,8 @@ android {
         targetSdk = AppConfigs.target_sdk_version
         versionCode = AppConfigs.version_code
         versionName = AppConfigs.version_name
+
+        buildConfigField("String", "API_KEY", gradleLocalProperties(rootDir).getProperty("api_key"))
     }
 
     @Suppress("UnstableApiUsage")
