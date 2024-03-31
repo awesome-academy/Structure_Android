@@ -1,2 +1,2 @@
 rootProject.name = "Structure_Android"
-include (":app")
+include (":presentation")
