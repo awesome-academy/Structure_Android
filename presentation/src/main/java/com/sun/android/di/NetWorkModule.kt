@@ -3,9 +3,9 @@ package com.sun.android.di
 import android.app.Application
 import com.google.gson.Gson
 import com.sun.android.BuildConfig
-import com.sun.android.data.TokenRepository
-import com.sun.android.data.source.remote.api.ApiService
-import com.sun.android.data.source.remote.api.middleware.InterceptorImpl
+import com.sun.domain.TokenRepository
+import com.sun.data.source.remote.api.ApiService
+import com.sun.data.source.remote.api.middleware.InterceptorImpl
 import java.util.concurrent.TimeUnit
 import okhttp3.Cache
 import okhttp3.Interceptor
@@ -32,8 +32,8 @@ fun provideOkHttpCache(app: Application): Cache {
     return Cache(app.cacheDir, cacheSize)
 }
 
-fun provideInterceptor(tokenRepository: TokenRepository): Interceptor {
-    return InterceptorImpl(tokenRepository)
+fun provideInterceptor(tokenRepository: com.sun.domain.TokenRepository): Interceptor {
+    return com.sun.data.source.remote.api.middleware.InterceptorImpl(tokenRepository)
 }
 
 fun provideOkHttpClient(cache: Cache, interceptor: Interceptor): OkHttpClient {
@@ -68,8 +68,8 @@ fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
         .client(okHttpClient).build()
 }
 
-fun provideApiService(retrofit: Retrofit): ApiService {
-    return retrofit.create(ApiService::class.java)
+fun provideApiService(retrofit: Retrofit): com.sun.data.source.remote.api.ApiService {
+    return retrofit.create(com.sun.data.source.remote.api.ApiService::class.java)
 }
 
 object NetWorkInstant {

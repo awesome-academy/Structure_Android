@@ -5,13 +5,13 @@ import android.content.res.Resources
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.sun.android.data.source.local.api.SharedPrefsApi
-import com.sun.android.data.source.local.api.sharedpref.SharedPrefsImpl
-import com.sun.android.data.source.local.room.AppDatabase
-import com.sun.android.data.source.local.room.MovieDao
-import com.sun.android.data.source.remote.api.middleware.BooleanAdapter
-import com.sun.android.data.source.remote.api.middleware.DoubleAdapter
-import com.sun.android.data.source.remote.api.middleware.IntegerAdapter
+import com.sun.data.source.local.api.SharedPrefsApi
+import com.sun.data.source.local.api.sharedpref.SharedPrefsImpl
+import com.sun.data.source.local.room.AppDatabase
+import com.sun.data.source.local.room.MovieDao
+import com.sun.data.source.remote.api.middleware.BooleanAdapter
+import com.sun.data.source.remote.api.middleware.DoubleAdapter
+import com.sun.data.source.remote.api.middleware.IntegerAdapter
 import com.sun.android.utils.DateTimeUtils
 import com.sun.android.utils.dispatchers.BaseDispatcherProvider
 import com.sun.android.utils.dispatchers.DispatcherProvider
@@ -35,8 +35,8 @@ fun provideResources(app: Application): Resources {
     return app.resources
 }
 
-fun provideSharedPrefsApi(app: Application, gson: Gson): SharedPrefsApi {
-    return SharedPrefsImpl(app, gson)
+fun provideSharedPrefsApi(app: Application, gson: Gson): com.sun.data.source.local.api.SharedPrefsApi {
+    return com.sun.data.source.local.api.sharedpref.SharedPrefsImpl(app, gson)
 }
 
 fun provideBaseDispatcherProvider(): BaseDispatcherProvider {
@@ -44,9 +44,9 @@ fun provideBaseDispatcherProvider(): BaseDispatcherProvider {
 }
 
 fun provideGson(): Gson {
-    val booleanAdapter = BooleanAdapter()
-    val integerAdapter = IntegerAdapter()
-    val doubleAdapter = DoubleAdapter()
+    val booleanAdapter = com.sun.data.source.remote.api.middleware.BooleanAdapter()
+    val integerAdapter = com.sun.data.source.remote.api.middleware.IntegerAdapter()
+    val doubleAdapter = com.sun.data.source.remote.api.middleware.DoubleAdapter()
     return GsonBuilder()
         .registerTypeAdapter(Boolean::class.java, booleanAdapter)
         .registerTypeAdapter(Int::class.java, integerAdapter)
@@ -57,10 +57,10 @@ fun provideGson(): Gson {
         .create()
 }
 
-fun provideDatabase(app: Application): AppDatabase {
-    return AppDatabase.getDatabase(app.applicationContext)
+fun provideDatabase(app: Application): com.sun.data.source.local.room.AppDatabase {
+    return com.sun.data.source.local.room.AppDatabase.getDatabase(app.applicationContext)
 }
 
-fun provideMovieDao(database: AppDatabase): MovieDao {
+fun provideMovieDao(database: com.sun.data.source.local.room.AppDatabase): com.sun.data.source.local.room.MovieDao {
     return database.movieDao()
 }
