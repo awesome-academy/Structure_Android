@@ -12,5 +12,7 @@ dependencies {
     //Coroutine
     implementation(Deps.coroutines_core)
     implementation(Deps.coroutines_android)
+    implementation(project(":data"))
+
     testImplementation(Deps.coroutines_test)
 }

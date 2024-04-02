@@ -1,7 +1,7 @@
 package com.sun.data.repository
 
-import com.sun.android.data.TokenRepository
-import com.sun.android.data.source.TokenDataSource
+import com.sun.data.source.TokenDataSource
+import com.sun.domain.repository.TokenRepository
 
 class TokenRepositoryImpl(private val local: TokenDataSource.Local) :
     TokenRepository {

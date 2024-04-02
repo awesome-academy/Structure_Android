@@ -1,6 +1,6 @@
 package com.sun.data.source.remote.api
 
-import com.sun.data.entities.MovieData
+import com.sun.data.entities.MovieRemote
 import com.sun.data.source.remote.api.response.BaseResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -11,11 +11,11 @@ interface ApiService {
     suspend fun getTopRateMovies(
         @Query("api_key") apiKey: String?,
         @Query("page") page: Int = 1
-    ): BaseResponse<List<MovieData>>
+    ): BaseResponse<List<MovieRemote>>
 
     @GET("movie/{movieId}")
     suspend fun getMovieDetails(
         @Path("movieId") movieId: Int,
         @Query("api_key") apiKey: String?
-    ): com.sun.data.entities.MovieData
+    ): com.sun.data.entities.MovieRemote
 }

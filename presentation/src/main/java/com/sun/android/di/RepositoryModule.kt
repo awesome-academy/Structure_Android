@@ -1,11 +1,10 @@
 package com.sun.android.di
 
-import com.sun.domain.MovieRepository
-import com.sun.domain.TokenRepository
 import com.sun.data.repository.MovieRepositoryImpl
 import com.sun.data.repository.TokenRepositoryImpl
 import com.sun.data.source.MovieDataSource
-import com.sun.data.source.TokenDataSource
+import com.sun.domain.repository.MovieRepository
+import com.sun.domain.repository.TokenRepository
 import org.koin.dsl.module
 
 val RepositoryModule = module {
@@ -14,10 +13,10 @@ val RepositoryModule = module {
     single { provideMovieRepository(get(), get()) }
 }
 
-fun provideTokenRepository(local: com.sun.data.source.TokenDataSource.Local): com.sun.domain.TokenRepository {
-    return com.sun.data.repository.TokenRepositoryImpl(local)
+fun provideTokenRepository(local: com.sun.data.source.TokenDataSource.Local): TokenRepository {
+    return TokenRepositoryImpl(local)
 }
 
-fun provideMovieRepository(remote: com.sun.data.source.MovieDataSource.Remote, local: com.sun.data.source.MovieDataSource.Local): com.sun.domain.MovieRepository {
-    return com.sun.data.repository.MovieRepositoryImpl(remote, local)
+fun provideMovieRepository(remote: MovieDataSource.Remote, local: MovieDataSource.Local): MovieRepository {
+    return MovieRepositoryImpl(remote, local)
 }

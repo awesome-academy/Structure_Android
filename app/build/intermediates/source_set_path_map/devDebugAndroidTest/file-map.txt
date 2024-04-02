@@ -1,0 +1,4 @@
+com.sun.android.test.app-dev-0 /Users/le.quang.dao/Documents/Development/Structure_Android/app/build/generated/res/resValues/androidTest/dev/debug
+com.sun.android.test.app-mergeDevDebugAndroidTestResources-1 /Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/incremental/devDebugAndroidTest/mergeDevDebugAndroidTestResources/merged.dir
+com.sun.android.test.app-mergeDevDebugAndroidTestResources-2 /Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/incremental/devDebugAndroidTest/mergeDevDebugAndroidTestResources/stripped.dir
+com.sun.android.test.app-merged_res-3 /Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/merged_res/devDebugAndroidTest

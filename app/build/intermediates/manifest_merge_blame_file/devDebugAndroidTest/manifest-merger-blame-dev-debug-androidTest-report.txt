@@ -1,0 +1,34 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.sun.structure_android.dev.test" >
+4
+5    <uses-sdk
+5-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:5:5-74
+6        android:minSdkVersion="23"
+6-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:5:15-41
+7        android:targetSdkVersion="34" />
+7-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:5:42-71
+8
+9    <instrumentation
+9-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:11:5-15:79
+10        android:name="android.test.InstrumentationTestRunner"
+10-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:11:22-75
+11        android:functionalTest="false"
+11-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:14:22-52
+12        android:handleProfiling="false"
+12-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:13:22-53
+13        android:label="Tests for com.sun.structure_android.dev"
+13-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:15:22-77
+14        android:targetPackage="com.sun.structure_android.dev" />
+14-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:12:22-75
+15
+16    <application
+16-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:7:5-9:19
+17        android:debuggable="true"
+18        android:extractNativeLibs="false" >
+19        <uses-library android:name="android.test.runner" />
+19-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:8:9-60
+19-->/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/tmp/manifest/androidTest/dev/debug/tempFile1ProcessTestManifest17422167166536969033.xml:8:23-57
+20    </application>
+21
+22</manifest>

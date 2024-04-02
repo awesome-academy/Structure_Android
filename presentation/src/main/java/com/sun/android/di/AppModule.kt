@@ -5,16 +5,11 @@ import android.content.res.Resources
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.sun.data.source.local.api.SharedPrefsApi
-import com.sun.data.source.local.api.sharedpref.SharedPrefsImpl
-import com.sun.data.source.local.room.AppDatabase
-import com.sun.data.source.local.room.MovieDao
-import com.sun.data.source.remote.api.middleware.BooleanAdapter
-import com.sun.data.source.remote.api.middleware.DoubleAdapter
-import com.sun.data.source.remote.api.middleware.IntegerAdapter
 import com.sun.android.utils.DateTimeUtils
 import com.sun.android.utils.dispatchers.BaseDispatcherProvider
 import com.sun.android.utils.dispatchers.DispatcherProvider
+import com.sun.data.source.local.api.SharedPrefsApi
+import com.sun.data.source.local.api.sharedpref.SharedPrefsImpl
 import org.koin.dsl.module
 
 val AppModule = module {
@@ -35,8 +30,8 @@ fun provideResources(app: Application): Resources {
     return app.resources
 }
 
-fun provideSharedPrefsApi(app: Application, gson: Gson): com.sun.data.source.local.api.SharedPrefsApi {
-    return com.sun.data.source.local.api.sharedpref.SharedPrefsImpl(app, gson)
+fun provideSharedPrefsApi(app: Application, gson: Gson): SharedPrefsApi {
+    return SharedPrefsImpl(app, gson)
 }
 
 fun provideBaseDispatcherProvider(): BaseDispatcherProvider {

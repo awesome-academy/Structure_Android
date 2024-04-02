@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.sun.android.app-mergeDevDebugResources-52:/layout/activity_main.xml",
+        "source": "com.sun.android.app-main-57:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.sun.android.app-mergeDevDebugResources-52:/layout/item_layout_movie.xml",
+        "source": "com.sun.android.app-main-57:/layout/item_layout_movie.xml"
+    },
+    {
+        "merged": "com.sun.android.app-mergeDevDebugResources-52:/layout/movies_fragment.xml",
+        "source": "com.sun.android.app-main-57:/layout/movies_fragment.xml"
+    },
+    {
+        "merged": "com.sun.android.app-mergeDevDebugResources-52:/layout/fragment_detail.xml",
+        "source": "com.sun.android.app-main-57:/layout/fragment_detail.xml"
+    }
+]

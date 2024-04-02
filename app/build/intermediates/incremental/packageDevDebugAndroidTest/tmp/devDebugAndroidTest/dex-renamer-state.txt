@@ -1,0 +1,7 @@
+#Thu Mar 28 10:07:10 ICT 2024
+base.0=/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/dex/devDebugAndroidTest/mergeProjectDexDevDebugAndroidTest/0/classes.dex
+base.1=/Users/le.quang.dao/Documents/Development/Structure_Android/app/build/intermediates/dex/devDebugAndroidTest/mergeProjectDexDevDebugAndroidTest/11/classes.dex
+path.0=0/classes.dex
+path.1=11/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex

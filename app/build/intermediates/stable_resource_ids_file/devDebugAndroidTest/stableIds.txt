@@ -1,0 +1,1 @@
+com.sun.structure_android.dev.test:string/app_name = 0x7f010000
